@@ -13,7 +13,7 @@ import pandas as pd
 cerebro = bt.Cerebro(stdstats=False)
 # 2. Add data feed
 # 2.1  Create a data feed
-brf_daily = bt.feeds.GenericCSVData(dataname=r'E:\project\backtrader_youtube_tutorial\demo\MES.csv',
+brf_daily = bt.feeds.GenericCSVData(dataname=r'MES.csv',
                                     nullvalue=0.0,
                                     dtformat=('%Y-%m-%d'),
                                     datetime=0,

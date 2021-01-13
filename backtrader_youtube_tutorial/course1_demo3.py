@@ -33,7 +33,7 @@ class MyStrategy(bt.Strategy):
 cerebro = bt.Cerebro(stdstats=False)
 # 2. Add data feed
 # 2.1  Create a data feed
-dataframe = pd.read_csv(r'E:\project\backtrader_youtube_tutorial\demo\MES.csv')
+dataframe = pd.read_csv(r'MES.csv')
 dataframe.columns = ['date',
                      'open',
                      'high',
