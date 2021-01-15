@@ -31,7 +31,7 @@ class MyStrategy(bt.Strategy):
     def next(self):
         # print("next")
         ma_value = sum([self.data.close[-cnt] for cnt in range(0, 24)]) / 24
-        ma_value_yesterday = sum([self.data.close[-cnt] for cnt in range(1, 25)]) / 25
+        ma_value_yesterday = sum([self.data.close[-cnt] for cnt in range(1, 25)]) / 24
         if self.data.close[0] > ma_value and self.data.close[-1] < ma_value_yesterday:
             self.order = self.buy()
         if self.data.close[0] < ma_value and self.data.close[-1] > ma_value_yesterday:
