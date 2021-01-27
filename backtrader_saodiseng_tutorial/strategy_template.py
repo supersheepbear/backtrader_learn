@@ -92,6 +92,9 @@ if __name__ == '__main__':
     # cerebro.addobserver(bt.observers.DrawDown)
     cerebro.addobserver(bt.observers.Value)
     cerebro.addobserver(bt.observers.TimeReturn)
+    cerebro.addobserver(bt.observers.Benchmark,
+                        data=data,
+                        timeframe=bt.TimeFrame.Years)
 
     # Add analyser
     cerebro.addanalyzer(bt.analyzers.PyFolio, _name='PyFolio')  # 加入PyFolio分析者
@@ -99,6 +102,7 @@ if __name__ == '__main__':
     cerebro.addanalyzer(bt.analyzers.DrawDown, _name='drawdown')
     cerebro.addanalyzer(bt.analyzers.TradeAnalyzer)
     # cerebro.addanalyzer(bt.analyzers.Transactions)
+
 
     # Print out the starting conditions
     print('Starting Portfolio Value: %.2f' % cerebro.broker.getvalue())
